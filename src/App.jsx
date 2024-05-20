@@ -1,39 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { AppleOutlined } from '@ant-design/icons'
 import './App.css'
-import Home from './components/Home'
-import Button from './components/Button'
+import Restaurant from './components/Restaurant'
+import { Button } from 'antd'
 
-function App () {
-  const [count, setCount] = useState(0)
-
+export default function App () {
   return (
-    <>
-      <div>
-        <a href='https://vitejs.dev' target='_blank'>
-          <img src={viteLogo} className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://react.dev' target='_blank'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount(count => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <Home />
-      <p className='read-the-docs'>
-        Click on the Vite and React logos to learn more
-      </p>
-      <Button title='Bouton Home' icon='-' />
-    </>
+    <div>
+      <Restaurant />
+      <Button
+        type='primary'
+        target='_blank'
+        href='https://ant.design/docs/react/introduce'
+        icon={<AppleOutlined />}
+      >
+        Ant Design
+      </Button>
+    </div>
   )
 }
-
-export default App

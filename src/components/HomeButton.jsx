@@ -1,10 +1,10 @@
-export default function Button (props) {
+export default function HomeButton (props) {
   const handleClick = () => {
     console.log('Clic !')
   }
 
   return (
-    <button style={{ color: props.color }} onClick={handleClick}>
+    <button style={{ backgroundColor: props.color }} onClick={handleClick}>
       {props.title} {props.icon}
     </button>
   )
