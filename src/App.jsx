@@ -6,6 +6,7 @@ export default function App () {
   const [lastName, setLastName] = useState('')
   const [password, setPassword] = useState('') */
   const [submittedForm, setSubmittedForm] = useState(false)
+  // Crée un état contenant un objet vide qui contiendra les valeurs des champs saisies dans le formulaire
   const [formData, setFormData] = useState({})
 
   /* const handleChange = event => {
@@ -26,14 +27,18 @@ export default function App () {
 
   // Plus générique :
   const handleChange = event => {
+    // Stocke la 'value' et le 'name' associé au champ de saisi modifié
     const { value, name } = event.target
+    // Met à jour l'objet dans l'état en conservant ses anciennes valeurs
     setFormData((preview) => ({
       ...preview,
-      [name]: value
+      // Place la valeur du 'name' en propriété de l'objet et la 'value' en valeur => { firstName: "Chris", lastName: "Chevalier", ...}
+      [name]: value 
     }))
   }
 
   const handleSubmit = event => {
+    // Ne recharge pas la page après la soumission du formulaire
     event.preventDefault()
     setSubmittedForm(true)
   }
